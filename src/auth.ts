@@ -3,9 +3,10 @@ import Google from "next-auth/providers/google";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
-  // เติม: provider ของ Google พร้อมตั้งค่าให้แสดงหน้าเลือกบัญชีทุกครั้ง
   providers: [
     Google({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
       authorization: {
         params: {
           prompt: "select_account",
@@ -18,9 +19,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       const pathname = request.nextUrl.pathname;
       const isProductManagementPage =
         /^\/products\/[^/]+\/(edit|delete)$/.test(pathname);
-      if (isProductManagementPage) {
-        return Boolean(auth?.user);
-      }
+      if (isProductManagementPage) return !!auth;
       return true;
     },
   },

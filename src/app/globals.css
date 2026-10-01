@@ -1,0 +1,343 @@
+:root {
+  /* WILLIAM EST - WE MAGNETIC FANCON Theme */
+  --bg-gradient: radial-gradient(circle at 50% 30%, #0c192e 0%, #050a14 60%, #020409 100%);
+  --card-bg: rgba(10, 16, 28, 0.88);
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  
+  /* สี Accent จากสองฝั่ง (วิลเลี่ยม - กรมท่า/ฟ้า & เอส - แดงไวน์) */
+  --william-blue: #38bdf8;        /* สีฟ้าประกายแสงแม่เหล็กฝั่งวิลเลี่ยม */
+  --est-red: #e11d48;            /* สีแดงแจ็กเก็ตฝั่งเอส */
+  --magnetic-silver: #f8fafc;     /* สีเงินคลื่น Magnetic */
+  --border-subtle: rgba(56, 189, 248, 0.25);
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 24px 40px 24px;
+}
+
+/* ==========================================
+   Header Section (Magnetic Energy Style)
+   ========================================== */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 18px 28px;
+  background: rgba(10, 16, 28, 0.92);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.9), 0 0 20px rgba(56, 189, 248, 0.25);
+}
+
+header form,
+header form > div,
+header div {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  width: auto !important;
+}
+
+/* ตกแต่งหัวข้อ h1 และ h2 (เช่น คำว่า สินค้า หรือ แก้ไขสินค้า) ให้ไล่สีแบบรูปที่ 2 */
+h1, .page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #38bdf8 0%, #ffffff 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #38bdf8 0%, #ffffff 50%, #f43f5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.5));
+}
+
+header span, 
+header p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ปุ่ม Login (สีฟ้าประกายแม่เหล็ก) */
+header button {
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  color: #ffffff;
+  border: 1px solid #7dd3fc;
+  padding: 9px 22px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
+  transition: all 0.2s ease;
+}
+
+header button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.7);
+  background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+}
+
+/* ปุ่ม Logout */
+header form button {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #f8fafc;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+
+header form button:hover {
+  background: linear-gradient(135deg, #334155, #1e293b);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+}
+
+/* ==========================================
+   Product Cards
+   ========================================== */
+
+article {
+  background: var(--card-bg);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
+}
+
+article:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.35), 0 0 15px rgba(225, 29, 72, 0.25);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+article h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.35rem;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+article p {
+  margin: 6px 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+/* ป้ายราคา: ฟอนต์สีเงิน ตัดขอบโทนแม่เหล็ก */
+article p:nth-of-type(2) {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #f8fafc;
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.3), rgba(159, 18, 57, 0.3));
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 4px 16px;
+  border-radius: 12px;
+  margin-top: 10px;
+  text-shadow: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Container ของปุ่มแอ็กชัน */
+article div {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 12px;
+}
+
+/* ปุ่มแก้ไข (Edit Button - โทนฟ้า William Blue) */
+article a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  border: 1px solid rgba(125, 211, 252, 0.4);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  transition: all 0.2s ease;
+}
+
+article a:hover {
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ปุ่มลบ (Delete Button - โทนแดง Est Red) */
+article a[href$="/delete"] {
+  color: #ffffff;
+  background: linear-gradient(135deg, #9f1239, #881337);
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  box-shadow: 0 4px 12px rgba(159, 18, 57, 0.3);
+}
+
+article a[href$="/delete"]:hover {
+  background: linear-gradient(135deg, #e11d48, #9f1239);
+  border-color: rgba(244, 63, 94, 0.7);
+  box-shadow: 0 0 18px rgba(225, 29, 72, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   Form Styles
+   ========================================== */
+
+main form {
+  background: var(--card-bg);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+main form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+main form label {
+  font-weight: 700;
+  color: #f8fafc;
+  font-size: 0.95rem;
+}
+
+main form input,
+main form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: rgba(6, 11, 20, 0.85);
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+main form input:focus,
+main form textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.5);
+  background-color: rgba(6, 11, 20, 0.98);
+}
+
+main form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+main form > div:last-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+main form button[type="submit"] {
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  color: white;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+  transition: all 0.2s ease;
+}
+
+main form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.8);
+  background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+}
+
+main form a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 10px 22px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.2s ease;
+}
+
+main form a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+header::after {
+  content: "";
+  position: absolute;
+  top: -28px;                  /* ปรับความสูงให้อยู่เหนือขอบกรอบ */
+  left: 24px;                  /* ย้ายมาอยู่ฝั่งซ้ายตรงกับคำว่า "สินค้า" */
+  right: auto;                 /* ลบค่าฝั่งขวาออก */
+  width: 55px;
+  height: 55px;
+  background-image: url('/wesley.png'); /* พาธรูปน้อง Wesley */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  transition: transform 0.3s ease;
+}
+
+header:hover::after {
+  transform: translateY(-4px) rotate(-6deg); /* เอียงนิดๆ น่ารักขึ้น */
+}
